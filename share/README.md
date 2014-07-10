@@ -4,7 +4,6 @@
 
 
 ###分享 API使用###
-===
 
     $.shareAPI(type, {
         url: 'http://voice.hupu.com/my',
