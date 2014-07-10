@@ -4,18 +4,15 @@
 
 
 ###分享 API使用###
+===
 
-Usage
-===
-$.shareAPI(type, {
-    url: 'http://voice.hupu.com/my',
-    title: '1212',
-    buttons: {
-        'weibo': {
-            url: 'http://service.weibo.com/share/share.php?url={url}&amp;title={title}'
+    $.shareAPI(type, {
+        url: 'http://voice.hupu.com/my',
+        title: '1212',
+        buttons: {
+            'weibo': {
+                url: 'http://service.weibo.com/share/share.php?url={url}&amp;title={title}'
+            }
         }
-    }
-});
-Example
-===
+    });
 
