@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.hp-shareTo-inner a {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	width:16px;
+	height:16px;
+	margin:0 2px;
+	text-indent:-99em;
+	overflow:hidden;
+	background:url(images/ico_share.png) no-repeat 0 -59px;
+}
+
+.hp-shareTo-inner .btn-share-weibo {
+	background-position:0 -59px;
+}
+.hp-shareTo-inner .btn-share-weibo:hover {
+	background-position:0 -75px;
+}
+.hp-shareTo-inner .btn-share-tqq {
+	background-position:-16px -59px;
+}
+.hp-shareTo-inner .btn-share-tqq:hover {
+	background-position:-16px -75px;
+}
+.hp-shareTo-inner .btn-share-qzone {
+	background-position:-32px -59px;
+}
+.hp-shareTo-inner .btn-share-qzone:hover {
+	background-position:-32px -75px;
+}
+.hp-shareTo-inner .btn-share-renren {
+	background-position:-48px -59px;
+}
+.hp-shareTo-inner .btn-share-renren:hover {
+	background-position:-48px -75px;
+}
+.hp-shareTo-inner .btn-share-weixin {
+	background-position:-64px -59px;
+}
+.hp-shareTo-inner .btn-share-weixin:hover {
+	background-position:-64px -75px;
+}
+.hp-shareTo-inner .btn-share-qq {
+	background-position:-80px -59px;
+}
+.hp-shareTo-inner .btn-share-qq:hover {
+	background-position:-80px -75px;
+}
