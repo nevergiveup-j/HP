@@ -5,7 +5,8 @@
 
 ###分享 API使用###
 
->
+Usage
+===
 $.shareAPI(type, {
     url: 'http://voice.hupu.com/my',
     title: '1212',
@@ -15,5 +16,6 @@ $.shareAPI(type, {
         }
     }
 });
->
+Example
+===
 
