@@ -4,12 +4,17 @@
 
 
 ###先引用jQuery 框架###
+-----------------------
+
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
 ###再引用JS###
+-----------------------
+
     <script src="jquery.share.js"></script>
 
 ###分享 API说明###
+-----------------------
 
     $.shareAPI(site, options, channel});
     
