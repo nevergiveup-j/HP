@@ -164,6 +164,12 @@
 			appkey = Converted( '2175967801', 'abe3b0bfec0044ea852fbf1456497950' ),
 			ralateUid = Converted( '1937280734', '@the_real_hoopchina' );
 
+
+		// 无分享类型
+		if ( typeof opts.buttons[ site ] === "undefined" ) {
+			return;
+		};
+
 		// 类型appkey
 		function Converted( weibo, tqq ) {
 			var newAppkey = '';
@@ -217,8 +223,12 @@
 			height = 500,
 			screenTop = ( window.screen.availHeight - 30 - height ) / 2,
 			screenLeft = ( window.screen.availWidth - 10 - width ) / 2,
-			features = 'scrollbars=no,width=' + width + ',height=' + height + ',left=' + screenLeft + ',top=' + screenTop + ',status=no,resizable=yes';  
+			features = '';
 
+		// QQ分享全屏
+		if ( site !== 'qq' ) {
+			features = 'scrollbars=no,width=' + width + ',height=' + height + ',left=' + screenLeft + ',top=' + screenTop + ',status=no,resizable=yes';  
+		}
 
 		var sitesURL = opts.buttons[ site ]['url'].replace('{url}', url).replace('{title}', title)
 												  .replace('{pic}', pic).replace('{appkey}', appkey)
@@ -226,12 +236,139 @@
 												  .replace('{site}', sites).replace('{desc}', desc)
 												  .replace('{searchPic}', opts.searchPic);
 
+								  
+		if ( site === 'weixin' ) {
+			PopLayer.init({
+				title: '打开微信“扫一扫”<br />打开网页后点击屏幕右上角分享按钮',
+				content: '<p style="width:162px;height:162px;margin:0 auto;text-align:center;padding:20px 0 45px;" id="J_qrcodeWeixin"></p>'
+			});
 
-		// console.log(sitesURL);									
-		window.open(sitesURL, site, features);
+			// 生成weixin二维码
+			var qrcode = new QRCode("J_qrcodeWeixin", {
+			    text: url,
+			    width: 162,
+			    height: 162
+			});
+		} else {
+			window.open(sitesURL, site, features);
+		}
 
 	};
 
+	/**
+	 * 弹出层,目前用于微信
+	 */
+	var PopLayer = {
+		init: function( options ) {
+			var that = this;
+
+			that.options = options;
+			that.T_RESIZE = null;
+			that.$win = $(window);
+			that.$body = $('body');
+
+			that.render();
+			that.bind();
+		},
+		render: function() {
+			var that = this;
+
+			var pop_tpl = [
+				'<div class="hp-share-mask" id="J_hp_share_mask"></div>',
+				'<div id="J_hp_popShare" class="hp-pop-share">',
+				    '<div class="hd">',
+				        '<h3>',
+				        	that.options.title,
+				        '</h3>',
+                        '<a href="javascript:" class="btn-close">×</a>',
+				    '</div>',
+				    '<div class="bd">',
+				    	that.options.content,
+				    '</div>',
+				'</div>'
+    		].join('');
+
+    		that.$body.append( pop_tpl );
+
+    		that.$mask = $('#J_hp_share_mask')
+    		that.$popLayer = $('#J_hp_popShare');
+    		that.$btnClose = that.$popLayer.find('.btn-close');
+
+    		that.setResizeSize();
+			
+		},
+		bind: function() {
+			var that = this;
+
+			$(document).bind('keydown', 'esc', function ( event ) { 
+    			that.hide();
+    		});
+
+    		that.$mask.bind('click', function(){
+    			that.hide();
+    		});
+
+			that.$btnClose.bind('click', function() {
+				that.hide();
+			});
+
+			that.$win.bind('resize', function() {
+				that.T_RESIZE = setTimeout(function() {
+					that.setResizeSize();
+				}, 200)
+			});
+
+		},
+		hide: function() {
+			var that = this;
+
+			clearTimeout( that.T_RESIZE );
+
+			$(document).unbind();
+
+			that.$mask.unbind().fadeOut('fast', function(){
+				$(this).remove();
+			});
+
+    		that.$popLayer.addClass('voice-pop-in-share').fadeOut('fast', function(){
+				$(this).remove();
+			});
+		},
+		setResizeSize: function() {
+			var that = this,
+				bodyHeight = Math.max(document.body.clientHeight, document.body.offsetHeight, document.documentElement.clientHeight),
+				getPos = that.getPosCenter();
+
+			that.$mask.css({
+				display : 'block',
+				width : '100%',
+				height : bodyHeight
+			});
+
+			that.$popLayer.css({
+            	position : 'absolute',
+                top : getPos.top,
+                left : getPos.left
+            }).show();
+		},
+		getPosCenter: function() {
+			var that = this,
+                getViewWidth = that.$win.width(),
+                getViewHeight = that.$win.height(),
+                getSrollTop = that.$win.scrollTop(),
+                getSrollLeft = that.$win.scrollLeft(),
+                width = that.$popLayer.width(),
+                height = 300,
+                top = getSrollTop + (getViewHeight - height) / 2,
+                left = getSrollLeft + (getViewWidth - width) / 2;
+
+            return {
+                top : top,
+                left : left,
+                viewWidth : getViewWidth
+            }
+		}
+	}
 
 
 	$.extend({
@@ -261,5 +398,5 @@
 // http://tolgaergin.com/files/social/index.html#
 // http://tolgaergin.com/files/social/assets/javascripts/socialShare.js
 // 
-// https://github.com/Julienh/Sharrre/blob/master/jquery.sharrre.js
+// https://github.com/Julienh/Sharrre
 // jquery share To 插件
