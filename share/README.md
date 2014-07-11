@@ -14,15 +14,17 @@
     <script src="jquery.share.js"></script>
 
 如果需要调用微信分享，先引入qrcod.js 生成二维码
+
     <link rel="stylesheet" href="jquery.share.css">
     <script src="qrcode/qrcode.min.js"></script>
     
-###分享 API说明###
+###分享 $.shraeAPI说明###
 -----------------------
 
     $.shareAPI(site, options, channel});
     
 ####参数####
-* site 分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
-* options 分享配置
+* site      {string}  分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
+* options   {object}  分享配置 可选
+**   title  {string}  分享标题 （默认获取当前页面标题）
 
