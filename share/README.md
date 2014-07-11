@@ -3,16 +3,20 @@
 两个插件Share API 
 
 
-###先引用jQuery 框架###
+###先引入jQuery 框架###
 -----------------------
 
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
-###再引用JS###
+###引用jQuery.share插件###
 -----------------------
 
     <script src="jquery.share.js"></script>
 
+如果需要调用微信分享，先引入qrcod.js 生成二维码
+    <link rel="stylesheet" href="jquery.share.css">
+    <script src="qrcode/qrcode.min.js"></script>
+    
 ###分享 API说明###
 -----------------------
 
