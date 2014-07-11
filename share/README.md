@@ -3,15 +3,17 @@
 两个插件Share API 
 
 
-###分享 API使用###
+###先引用jQuery 框架###
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
-    $.shareAPI(type, {
-        url: 'http://voice.hupu.com/my',
-        title: '1212',
-        buttons: {
-            'weibo': {
-                url: 'http://service.weibo.com/share/share.php?url={url}&amp;title={title}'
-            }
-        }
-    });
+###再引用JS###
+    <script src="jquery.share.js"></script>
+
+###分享 API说明###
+
+    $.shareAPI(site, options, channel});
+    
+####参数####
+* site 分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
+* options 分享配置
 
