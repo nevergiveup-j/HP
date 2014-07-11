@@ -25,7 +25,10 @@
     
 ####参数####
 1. site      {string}  分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
-2. options   {object}  分享配置 可选
-*   title    {string}  分享标题 （默认获取当前页面标题）
-*   url      {string}  分享链接  (默认当前地址)
+2. options   {object}  分享配置 可选<br />
+--- title    {string}  分享标题 （默认获取当前页面标题）<br />
+--- url      {string}  分享链接  (默认当前地址)<br />
+--- pic      {string}  分享图片的路径, 使用多张图片以||隔开[a.jpg||b.jpg]<br />
+--- summary  {string}  分享摘要
+--- appkey   {}
 
