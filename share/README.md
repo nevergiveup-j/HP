@@ -1,14 +1,14 @@
-#jQuery-Share 分享到 插件 #
+# jQuery-Share 分享到 插件
 让分享插件开发更简单，分享到:新浪微博、腾讯微博、QQ空间、人人网、微信、QQ
 两个插件Share API 
 
 
-###先引入jQuery 框架###
+### 先引入jQuery 框架
 -----------------------
 
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
-###引用jQuery.share插件###
+### 引用jQuery.share插件
 -----------------------
 
     <script src="jquery.share.js"></script>
@@ -18,11 +18,15 @@
     <link rel="stylesheet" href="jquery.share.css">
     <script src="qrcode/qrcode.min.js"></script>
     
-###分享 $.shraeAPI说明###
+### 分享 $.shraeAPI说明
 -----------------------
 
     $.shareAPI(site, options, channel});
     
+    
+#### site参数 <code>string</code>
+<code>site</code>为分享类型 
+
 ####参数####
 1. site       {string}  分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
 2. options    {object}  分享配置 可选<br />
