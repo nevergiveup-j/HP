@@ -24,8 +24,10 @@
     $.shareAPI(site, options, channel});
     
     
-#### site参数 <code>string</code>
-<code>site</code>为分享类型 
+#### site<code>string</code> 分享类型<code>string</code> *必写
+默认参数：<br />
+<code>weibo</code>新浪微博、<code>tqq</code>腾讯微博、<code>qzone</code>QQ空间、<code>renren</code>人人网、<code>qq</code>QQ分享、<code>weixin</code>微信
+ 
 
 ####参数####
 1. site       {string}  分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
