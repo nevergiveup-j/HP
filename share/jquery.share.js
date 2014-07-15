@@ -391,12 +391,3 @@
 	// ADM 
 	return ShareAPI;
 }));
-
-// http://plugins.in1.com/share/demo
-// https://github.com/iatek/jquery-share/blob/master/jquery.share.js
-
-// http://tolgaergin.com/files/social/index.html#
-// http://tolgaergin.com/files/social/assets/javascripts/socialShare.js
-// 
-// https://github.com/Julienh/Sharrre
-// jquery share To 插件
