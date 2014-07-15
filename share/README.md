@@ -24,10 +24,41 @@
     $.shareAPI(site, options, channel});
     
     
-#### site<code>string</code> 分享类型<code>string</code> *必写
+#### site<code>string</code> 分享类型 *必写
 默认参数：<br />
-<code>weibo</code>新浪微博、<code>tqq</code>腾讯微博、<code>qzone</code>QQ空间、<code>renren</code>人人网、<code>qq</code>QQ分享、<code>weixin</code>微信
- 
+<code>weibo</code>新浪微博、<code>tqq</code>腾讯微博、<code>qzone</code>QQ空间、<code>renren</code>人人网、<code>qq</code>QQ分享、<code>weixin</code>微信<br />
+
+自定义参数：
+
+
+
+#### options<code>object</code> 分享配置
+<code>title</code> 可选，分享标题（默认获取当前页面标题）<br />
+<code>url</code> 可选，分享链接（默认当前地址）<br />
+<code>pic</code> 可选，分享图片的路径, 使用多张图片以||隔开[a.jpg||b.jpg]<br />
+<code>summary</code> 可选，分享摘要<br />
+<code>site</code> 可选，分享来源 (默认根据<code>channel</code>参数为虎扑体育,只有QQ空间、QQ需要)<br />
+<code>desc</code> 可选，分享理由 (只有QQ需要)<br />
+<code>searchPic</code> 可选，自动抓取页面上的图片 (默认true，只有新浪微博)<br />
+<code>buttons</code> 可选，设置按扭<code>object</code><br />
+
+参数demo如：<br />
+
+    $.shareAPI('weibo', {
+        title: '虎扑体育 - 你的体育全世界！',
+        url: 'http://www.hupu.com',
+        pic: 'a.jpg',
+        summary '媒评最差11人西班牙4席',
+        site: '虎扑体育',
+        desc: '这个球不错',
+        searchPic: true,
+        buttons: {
+            'weibo': {
+                url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}&ralateUid={ralateUid}&searchPic={searchPic}'
+            }
+        }
+    }});
+
 
 ####参数####
 1. site       {string}  分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
