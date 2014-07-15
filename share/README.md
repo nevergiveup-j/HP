@@ -72,3 +72,16 @@ demo:<br />
 如参数<code>options</code>不需要使用，可以使用如下：
 
     $.shareAPI('weibo', 'soccer');
+
+
+### 分享 $.share();说明
+-----------------------
+
+    $('#shrae-newList').share({
+    	channel: 'sports',
+    	shareConfig: {
+    	    title: document.title
+    		url: window.location.href
+    	},
+    	social: ['weibo','tqq', 'qzone', 'renren']
+    });
