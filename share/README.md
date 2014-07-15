@@ -30,8 +30,10 @@
 
 自定义参数：
 
-
-
+demo：<br />
+    
+    $.shareAPI('weibo');
+    
 #### options<code>object</code> 分享配置
 <code>title</code> 可选，分享标题（默认获取当前页面标题）<br />
 <code>url</code> 可选，分享链接（默认当前地址）<br />
@@ -42,7 +44,7 @@
 <code>searchPic</code> 可选，自动抓取页面上的图片 (默认true，只有新浪微博)<br />
 <code>buttons</code> 可选，设置按扭<code>object</code><br />
 
-参数demo如：<br />
+demo：<br />
 
     $.shareAPI('weibo', {
         title: '虎扑体育 - 你的体育全世界！',
@@ -58,7 +60,19 @@
             }
         }
     }});
+    
+    
+#### channel<code>string</code> 频道名，用于分享来源
+参数说明：<code>basketball</code>篮球频道、<code>soccer</code>足球频道、<code>racing</code>赛车频道、<code>voice</code>虎扑新声频道,默认值为综合<code>sports</code><br />
 
+demo:<br />
+
+    $.shareAPI('weibo', {}, 'soccer');
+
+如参数<code>options</code>不需要使用，可以使用如下：
+
+    $.shareAPI('weibo', 'soccer');
+    
 
 ####参数####
 1. site       {string}  分享类型 （weibo || tqq || qzone || renren || qq || weixin） *必写
