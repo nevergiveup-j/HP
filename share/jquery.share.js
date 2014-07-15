@@ -21,7 +21,6 @@
     var defaults = {
     	social: ['weibo', 'tqq', 'qzone', 'renren'],
     	theme: 'icon',
-    	channel: 'sports',
     	shareConfig: {
     		// 标题
 	    	title: document.title,
@@ -31,14 +30,23 @@
 	    	pic: '',
 	    	// 分享摘要
 	    	summary: '',
-	    	appkey: '',
-	    	ralateUid: '',
-	    	// 分享来源 (QQ空间、QQ)
-	    	site: '',
 	    	// 分享理由 (QQ)
 	    	desc: '',
 	    	// 自动抓取页面上的图片 (新浪微博)
-	    	searchPic: true
+	    	searchPic: true,
+	    	// 分享来源
+	    	source: {
+	    		appkey: {
+		    		weibo: '',
+		    		tqq: ''
+		    	},
+		    	ralateUid: {
+		    		weibo: '',
+		    		tqq: ''
+		    	},
+		    	// 分享来源 (QQ空间、QQ)
+		    	siteName: ''
+	    	}
     	},
     	// 设置按扭
     	buttons: {
@@ -128,7 +136,7 @@
 			that.$list.bind('click', function() {
 				site = $(this).data('type');
 
-				new ShareAPI( site, config, that.options.channel );
+				new ShareAPI( site, config );
 			})
 		}
 	}
@@ -141,14 +149,8 @@
 	 * @config {string}  [url]       可选，分享链接
 	 * @config {string}  [pic]       可选，分享图片的路径。使用多张图片以||隔开[a.jpg||b.jpg] bug 多张不一样
 	 * @config {string}  [summary]   可选，分享摘要
-	 * @param  {string}  channel     频道名
 	 */
-	var ShareAPI = function( site, options, channel ) {
-
-		if ( !$.isPlainObject( options ) ) {
-			channel = options;
-			options = null;
-		};
+	var ShareAPI = function( site, options ) {
 
 		// 分享配置
 		var config = defaults.shareConfig;
@@ -160,9 +162,9 @@
 			pic = encodeURIComponent( opts.pic ),
 			summary = encodeURIComponent( opts.summary ),
 			desc = encodeURIComponent( opts.desc ),
-			siteName = '虎扑体育',
-			appkey = Converted( '2175967801', 'abe3b0bfec0044ea852fbf1456497950' ),
-			ralateUid = Converted( '1937280734', '@the_real_hoopchina' );
+			sites = encodeURIComponent( opts.source.site ),
+			appkey = Converted( opts.source.appkey.weibo, opts.source.appkey.tqq ),
+			ralateUid = Converted( opts.source.ralateUid.weibo, opts.source.ralateUid.tqq );
 
 
 		// 无分享类型
@@ -183,43 +185,7 @@
 			return newAppkey;
 		}
 
-		switch( channel ) {
-			// 篮球
-			case "basketball":
-			case "nba":
-			case "cba":
-				siteName = '虎扑篮球';
-				ralateUid = Converted( '1642292081', '@the_real_hoopchina' );
-
-				break;
-			// 足球
-			case "soccer":
-				siteName = '虎扑足球';
-				appkey = Converted( '1104732554', '3a152727fa2d4926bf9e82bc76e32360' );
-				ralateUid = Converted( '1698513182', '@goalhi4u' );
-
-				break;
-			// 赛车
-			case "f1":
-			case "racing":
-				siteName = '虎扑赛车';
-				appkey = Converted( '2175967801', '788d3087f3844146af2a051dfcaa9ceb' );
-				ralateUid = Converted( '1750778357', '@the_real_hoopchina' );
-
-				break;
-			// 新声
-			case "voice":
-				siteName = '虎扑新声';
-				appkey = Converted( '1414486651', '801094981' );
-				ralateUid = Converted( '1841109261', '@the_real_hoopchina' );
-
-				break;
-			default:
-				break;
-		};
-
-		var sites = encodeURIComponent( opts.site || siteName ),
-			width = 600,
+		var width = 600,
 			height = 500,
 			screenTop = ( window.screen.availHeight - 30 - height ) / 2,
 			screenLeft = ( window.screen.availWidth - 10 - width ) / 2,
@@ -372,8 +338,8 @@
 
 
 	$.extend({
-		shareAPI: function( site, options, channel ) {
-			new ShareAPI( site, options, channel );
+		shareAPI: function( site, options ) {
+			new ShareAPI( site, options );
 		}
 	});
 
