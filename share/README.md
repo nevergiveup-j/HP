@@ -74,7 +74,7 @@ demo:<br />
     $.shareAPI('weibo', 'soccer');
 
 
-### 分享 $.share();说明
+### 分享 $.share();插件
 -----------------------
 
     $('#shrae-newList').share({
