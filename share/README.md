@@ -21,7 +21,7 @@
 ### 分享 $.shraeAPI说明
 -----------------------
 
-    $.shareAPI(site, options, channel});
+    $.shareAPI(site, options});
     
     
 #### site<code>string</code> 分享类型 *必写
@@ -29,6 +29,15 @@
 <code>weibo</code>新浪微博、<code>tqq</code>腾讯微博、<code>qzone</code>QQ空间、<code>renren</code>人人网、<code>qq</code>QQ分享、<code>weixin</code>微信<br />
 
 自定义参数：
+添加<code>twitter</code>类型，需要在<code>options.buttons</code>加上对应的值
+
+	buttons: {
+		'twitter': {
+			text: 'twitter',
+			className: 'btn-share-tweet',
+			url: 'https://twitter.com/share?url={url}&text={title}'
+		}
+	}
 
 demo：<br />
     
@@ -40,6 +49,7 @@ demo：<br />
 <code>pic</code> 可选，分享图片的路径, 使用多张图片以||隔开[a.jpg||b.jpg]<br />
 <code>summary</code> 可选，分享摘要<br />
 <code>source</code> 可选，分享来源<code>object</code> <br />
+
 如：<br />
 
 	source: {
@@ -58,6 +68,7 @@ demo：<br />
 <code>desc</code> 可选，分享理由 (只有QQ需要)<br />
 <code>searchPic</code> 可选，新浪微博自动抓取页面上的图片 (默认true)<br />
 <code>buttons</code> 可选，设置按扭<code>object</code><br />
+
 如：<br />
 
 	buttons: {
