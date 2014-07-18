@@ -37,6 +37,9 @@ $('.J_share_list a').bind('click', function() {
 	$.shareAPI(type, {
 		url: 'http://voice.hupu.com/my',
 		title: '1212',
+		source: {
+
+		},
 		buttons: {
 			'weibo': {
 				url: 'http://service.weibo.com/share/share.php?url={url}&title={title}'
@@ -47,7 +50,6 @@ $('.J_share_list a').bind('click', function() {
 
 $('#shrae-newList').share({
 	theme: 'text',
-	channel: 'voice',
 	shareConfig: {
 		searchPic: false
 	},

@@ -1,9 +1,9 @@
 /**
  * @Description: jQuery 分享到 插件
  * @Author: wangjun
- * @Update: 2014-07-10 16:00
+ * @Update: 2014-07-18 16:00
  * @version: 1.0
- * @Github URL: https://github.com/nevergiveup-j
+ * @Github URL: https://github.com/nevergiveup-j/HP/tree/master/share
  */
 
 ;(function (factory) {
