@@ -41,7 +41,7 @@ demo：<br />
 <code>summary</code> 可选，分享摘要<br />
 <code>source</code> 可选，分享来源<code>object</code> <br />
 <code>desc</code> 可选，分享理由 (只有QQ需要)<br />
-<code>searchPic</code> 可选，自动抓取页面上的图片 (默认true，只有新浪微博)<br />
+<code>searchPic</code> 可选，新浪微博自动抓取页面上的图片 (默认true)<br />
 <code>buttons</code> 可选，设置按扭<code>object</code><br />
 
 demo：<br />
@@ -58,19 +58,21 @@ demo：<br />
         // 分享来源
         source: {
             appkey: {
-	    		weibo: '',
-	    		tqq: ''
-	    	},
-	    	ralateUid: {
-	    		weibo: '',
-	    		tqq: ''
-	    	},
-	    	// 分享来源 (QQ空间、QQ)
-	    	siteName: ''
+    		weibo: '',
+    		tqq: ''
+	    },
+	    ralateUid: {
+	    	weibo: '',
+	    	tqq: ''
+	    },
+	    // 分享来源 (QQ空间、QQ)
+	    siteName: ''
         },
         // 分享理由
         desc: '这个球不错',
+        // 自动抓取页面上的图片
         searchPic: true,
+        // 按扭路径
         buttons: {
             'weibo': {
                 url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}&ralateUid={ralateUid}&searchPic={searchPic}'
