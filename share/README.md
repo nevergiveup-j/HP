@@ -40,9 +40,58 @@ demo：<br />
 <code>pic</code> 可选，分享图片的路径, 使用多张图片以||隔开[a.jpg||b.jpg]<br />
 <code>summary</code> 可选，分享摘要<br />
 <code>source</code> 可选，分享来源<code>object</code> <br />
+如：<br />
+
+	source: {
+        appkey: {
+			weibo: '',
+			tqq: ''
+    	},
+    	ralateUid: {
+    		weibo: '',
+    		tqq: ''
+    	},
+    	// 分享来源 (QQ空间、QQ)
+    	siteName: ''
+    }
+	
 <code>desc</code> 可选，分享理由 (只有QQ需要)<br />
 <code>searchPic</code> 可选，新浪微博自动抓取页面上的图片 (默认true)<br />
 <code>buttons</code> 可选，设置按扭<code>object</code><br />
+如：<br />
+
+	buttons: {
+		'weibo': {
+			text: '新浪微博', 
+			className: 'btn-share-weibo', 
+			url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}&ralateUid={ralateUid}&searchPic={searchPic}'
+		},
+    	'tqq': {
+    		text: '腾讯微博', 
+    		className: 'btn-share-tqq', 
+    		url: 'http://v.t.qq.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}'
+    	},
+    	'qzone': {
+    		text: 'QQ空间', 
+    		className: 'btn-share-qzone', 
+    		url: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pics={pic}&summary={summary}&site={site}'
+    	},
+    	'renren': {
+    		text: '人人网', 
+    		className: 'btn-share-renren', 
+    		url: 'http://widget.renren.com/dialog/share?link={url}&title={title}&pic={pic}'
+    	},
+    	'qq': {
+    		text: 'QQ', 
+    		className: 'btn-share-qq', 
+    		url: 'http://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&pics={pic}&summary={summary}&desc={desc}&site={site}'
+    	},
+    	'weixin': {
+    		text: '微信', 
+    		className: 'btn-share-weixin', 
+    		url: ''
+    	}
+	}
 
 demo：<br />
 
@@ -58,15 +107,15 @@ demo：<br />
         // 分享来源
         source: {
             appkey: {
-    		weibo: '',
-    		tqq: ''
-	    },
-	    ralateUid: {
-	    	weibo: '',
-	    	tqq: ''
-	    },
-	    // 分享来源 (QQ空间、QQ)
-	    siteName: ''
+    			weibo: '',
+    			tqq: ''
+	    	},
+	    	ralateUid: {
+	    		weibo: '',
+	    		tqq: ''
+	    	},
+	    	// 分享来源 (QQ空间、QQ)
+	    	siteName: ''
         },
         // 分享理由
         desc: '这个球不错',
