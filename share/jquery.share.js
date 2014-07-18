@@ -91,7 +91,8 @@
 			return;
 		};
 
-		this.options = $.extend({}, defaults, options);
+		// this.options = $.extend({}, defaults, options);
+		this.options = $.extend(true, {}, defaults, options || {});
 
 		this.init();
 	};
@@ -151,6 +152,7 @@
 	 * @config {string}  [summary]   可选，分享摘要
 	 */
 	var ShareAPI = function( site, options ) {
+
 
 		// 分享配置
 		var config = defaults.shareConfig;

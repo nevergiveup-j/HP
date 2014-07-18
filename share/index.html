@@ -43,6 +43,11 @@ $('.J_share_list a').bind('click', function() {
 		buttons: {
 			'weibo': {
 				url: 'http://service.weibo.com/share/share.php?url={url}&title={title}'
+			},
+			'twitter': {
+				text: 'tweet',
+				className: 'btn-share-tweet',
+				url: 'https://twitter.com/share?url={url}&text={title}'
 			}
 		}
 	}); 
@@ -53,6 +58,16 @@ $('#shrae-newList').share({
 	shareConfig: {
 		searchPic: false
 	},
-	social: ['weibo','tqq', 'qzone', 'renren', 'weixin', 'qq']
+	buttons: {
+		'weibo': {
+			url: 'http://service.weibo.com/share/share.php?url={url}&title={title}'
+		},
+		'twitter': {
+			text: 'tweet',
+			className: 'btn-share-tweet',
+			url: 'https://twitter.com/share?url={url}&text={title}'
+		}
+	},
+	social: ['weibo','tqq', 'qzone', 'renren', 'weixin', 'qq', 'twitter']
 });
 </script>
