@@ -34,7 +34,7 @@
 	buttons: {
 		'twitter': {
 			text: 'twitter',
-			className: 'btn-share-tweet',
+			className: 'twitter',
 			url: 'https://twitter.com/share?url={url}&text={title}'
 		}
 	}
