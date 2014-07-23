@@ -1,5 +1,5 @@
 # jQuery-Share 分享到 插件
-让分享插件开发更简单，分享到:新浪微博、腾讯微博、QQ空间、人人网、微信、QQ、豆瓣、twitter、facebook
+让分享插件开发更简单，分享到:新浪微博、腾讯微博、QQ空间、人人网、微信、QQ、豆瓣、twitter、facebook<br />
 两个插件Share API 
 
 
