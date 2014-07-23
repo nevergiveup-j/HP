@@ -52,33 +52,48 @@
     	buttons: {
     		'weibo': {
     			text: '新浪微博', 
-    			className: 'btn-share-weibo', 
+    			className: 'weibo', 
     			url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}&ralateUid={ralateUid}&searchPic={searchPic}'
     		},
 	    	'tqq': {
 	    		text: '腾讯微博', 
-	    		className: 'btn-share-tqq', 
+	    		className: 'tqq', 
 	    		url: 'http://v.t.qq.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}'
 	    	},
 	    	'qzone': {
 	    		text: 'QQ空间', 
-	    		className: 'btn-share-qzone', 
+	    		className: 'qzone', 
 	    		url: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pics={pic}&summary={summary}&site={site}'
 	    	},
 	    	'renren': {
 	    		text: '人人网', 
-	    		className: 'btn-share-renren', 
+	    		className: 'renren', 
 	    		url: 'http://widget.renren.com/dialog/share?link={url}&title={title}&pic={pic}'
 	    	},
 	    	'qq': {
 	    		text: 'QQ', 
-	    		className: 'btn-share-qq', 
+	    		className: 'qq', 
 	    		url: 'http://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&pics={pic}&summary={summary}&desc={desc}&site={site}'
 	    	},
 	    	'weixin': {
 	    		text: '微信', 
-	    		className: 'btn-share-weixin', 
+	    		className: 'weixin', 
 	    		url: ''
+	    	},
+	    	'douban': {
+	    		text: '豆瓣', 
+	    		className: 'douban', 
+	    		url: 'http://www.douban.com/share/service?href={url}&name={title}&text={summary}'
+	    	},
+	    	'twitter': {
+	    		text: 'twitter', 
+	    		className: 'twitter', 
+	    		url: 'https://twitter.com/share?url={url}&text={title}'
+	    	},
+	    	'facebook': {
+	    		text: 'facebook', 
+	    		className: 'facebook', 
+	    		url: 'http://www.facebook.com/sharer.php?u={url}&t={title}'
 	    	}
     	}
     }
@@ -119,7 +134,7 @@
 				data = that.options.buttons[list];
 
 				if ( typeof data !== "undefined" ) {
-					arrayData.push( '<a href="javascript:" data-type="'+ list +'" class="btn-share '+ data.className +'" title="'+ data.text +'">'+ data.text +'</a>' );
+					arrayData.push( '<a href="javascript:" data-type="'+ list +'" class="btn-share btn-share-'+ data.className +'" title="'+ data.text +'">'+ data.text +'</a>' );
 				}
 				
 			};
@@ -153,7 +168,6 @@
 	 */
 	var ShareAPI = function( site, options ) {
 
-
 		// 分享配置
 		var config = defaults.shareConfig;
 			config.buttons = defaults.buttons;
@@ -161,7 +175,7 @@
 		var opts = $.extend(true,{}, config, options || {}),
 			title = encodeURIComponent( opts.title ),
 			url = encodeURIComponent( opts.url ),
-			pic = encodeURIComponent( opts.pic ),
+			pic = opts.pic,
 			summary = encodeURIComponent( opts.summary ),
 			desc = encodeURIComponent( opts.desc ),
 			sites = encodeURIComponent( opts.source.site ),
@@ -173,6 +187,16 @@
 		if ( typeof opts.buttons[ site ] === "undefined" ) {
 			return;
 		};
+
+		// 新浪微博分享使用多张图片路径
+		var piaArray = pic.split('||');
+
+		if ( piaArray.length > 1 && site !== 'weibo' ) {
+			pic = piaArray[0];
+		};
+
+		pic = encodeURIComponent( pic );
+
 
 		// 类型appkey
 		function Converted( weibo, tqq ) {

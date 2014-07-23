@@ -37,16 +37,17 @@ $('.J_share_list a').bind('click', function() {
 	$.shareAPI(type, {
 		url: 'http://voice.hupu.com/my',
 		title: '1212',
+		pic: 'http://www.hupu.com/uploads/hupu/focus/large-20140723093316.jpg||http://www.hupu.com/uploads/hupu/gallery/20140715143250-1.jpg',
 		source: {
 
 		},
 		buttons: {
 			'weibo': {
-				url: 'http://service.weibo.com/share/share.php?url={url}&title={title}'
+				url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}'
 			},
 			'twitter': {
-				text: 'tweet',
-				className: 'btn-share-tweet',
+				text: 'twitter',
+				className: 'twitter',
 				url: 'https://twitter.com/share?url={url}&text={title}'
 			}
 		}
@@ -60,14 +61,14 @@ $('#shrae-newList').share({
 	},
 	buttons: {
 		'weibo': {
-			url: 'http://service.weibo.com/share/share.php?url={url}&title={title}'
+			url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}'
 		},
 		'twitter': {
-			text: 'tweet',
-			className: 'btn-share-tweet',
+			text: 'twitter',
+			className: 'twitter',
 			url: 'https://twitter.com/share?url={url}&text={title}'
 		}
 	},
-	social: ['weibo','tqq', 'qzone', 'renren', 'weixin', 'qq', 'twitter']
+	social: ['weibo','tqq', 'qzone', 'renren', 'weixin', 'qq']
 });
 </script>
