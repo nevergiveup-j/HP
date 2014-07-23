@@ -1,5 +1,5 @@
 # jQuery-Share 分享到 插件
-让分享插件开发更简单，分享到:新浪微博、腾讯微博、QQ空间、人人网、微信、QQ
+让分享插件开发更简单，分享到:新浪微博、腾讯微博、QQ空间、人人网、微信、QQ、豆瓣、twitter、facebook
 两个插件Share API 
 
 
@@ -26,7 +26,7 @@
     
 #### site<code>string</code> 分享类型 *必写
 默认参数：<br />
-<code>weibo</code>新浪微博、<code>tqq</code>腾讯微博、<code>qzone</code>QQ空间、<code>renren</code>人人网、<code>qq</code>QQ分享、<code>weixin</code>微信<br />
+<code>weibo</code>新浪微博、<code>tqq</code>腾讯微博、<code>qzone</code>QQ空间、<code>renren</code>人人网、<code>qq</code>QQ分享、<code>weixin</code>微信、<code>douban</code>豆瓣、<code>twitter</code>twitter、<code>facebook</code>facebook<br />
 
 自定义参数：
 添加<code>twitter</code>类型，需要在<code>options.buttons</code>加上对应的值
@@ -72,37 +72,52 @@ demo：<br />
 如：<br />
 
 	buttons: {
-		'weibo': {
-			text: '新浪微博', 
-			className: 'btn-share-weibo', 
-			url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}&ralateUid={ralateUid}&searchPic={searchPic}'
-		},
-    	'tqq': {
-    		text: '腾讯微博', 
-    		className: 'btn-share-tqq', 
-    		url: 'http://v.t.qq.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}'
-    	},
-    	'qzone': {
-    		text: 'QQ空间', 
-    		className: 'btn-share-qzone', 
-    		url: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pics={pic}&summary={summary}&site={site}'
-    	},
-    	'renren': {
-    		text: '人人网', 
-    		className: 'btn-share-renren', 
-    		url: 'http://widget.renren.com/dialog/share?link={url}&title={title}&pic={pic}'
-    	},
-    	'qq': {
-    		text: 'QQ', 
-    		className: 'btn-share-qq', 
-    		url: 'http://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&pics={pic}&summary={summary}&desc={desc}&site={site}'
-    	},
-    	'weixin': {
-    		text: '微信', 
-    		className: 'btn-share-weixin', 
-    		url: ''
+    		'weibo': {
+    			text: '新浪微博', 
+    			className: 'weibo', 
+    			url: 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}&ralateUid={ralateUid}&searchPic={searchPic}'
+    		},
+	    	'tqq': {
+	    		text: '腾讯微博', 
+	    		className: 'tqq', 
+	    		url: 'http://v.t.qq.com/share/share.php?url={url}&title={title}&pic={pic}&appkey={appkey}'
+	    	},
+	    	'qzone': {
+	    		text: 'QQ空间', 
+	    		className: 'qzone', 
+	    		url: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pics={pic}&summary={summary}&site={site}'
+	    	},
+	    	'renren': {
+	    		text: '人人网', 
+	    		className: 'renren', 
+	    		url: 'http://widget.renren.com/dialog/share?link={url}&title={title}&pic={pic}'
+	    	},
+	    	'qq': {
+	    		text: 'QQ', 
+	    		className: 'qq', 
+	    		url: 'http://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&pics={pic}&summary={summary}&desc={desc}&site={site}'
+	    	},
+	    	'weixin': {
+	    		text: '微信', 
+	    		className: 'weixin', 
+	    		url: ''
+	    	},
+	    	'douban': {
+	    		text: '豆瓣', 
+	    		className: 'douban', 
+	    		url: 'http://www.douban.com/share/service?href={url}&name={title}&text={summary}'
+	    	},
+	    	'twitter': {
+	    		text: 'twitter', 
+	    		className: 'twitter', 
+	    		url: 'https://twitter.com/share?url={url}&text={title}'
+	    	},
+	    	'facebook': {
+	    		text: 'facebook', 
+	    		className: 'facebook', 
+	    		url: 'http://www.facebook.com/sharer.php?u={url}&t={title}'
+	    	}
     	}
-	}
 
 demo：<br />
 
