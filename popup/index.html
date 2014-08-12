@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+body, a {
+	margin:0;
+	padding:0;
+}
+a {
+	color:#444;
+	text-decoration:none;
+	font-size:14px;
+}
+a:hover {
+	color:#000;
+}
+.popup-wrap {
+	width:300px;
+	margin:200px auto;
+}
+.hp-popup {
+	width:450px;
+	min-height:250px;
+	padding:25px;
+	background:#fff;
+	border-radius:10px;
+}
+</style>
+</head>
+<body>
+<div class="popup-wrap">
+	<a href="javascript:" class="btn-popup">按扭</a>
+</div>
+</body>
+</html>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="jquery.popup.js"></script>
+<script>
+$('.btn-popup').bind('click', function() {
+	$.popup({
+		// position: [0, 0],
+		// mask: false
+		onCloseCallback: function() {
+			console.log(12);
+		}
+	}, function() {
+		console.log('callback');
+	});
+});
+</script>
