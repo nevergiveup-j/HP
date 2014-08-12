@@ -21,6 +21,7 @@ a:hover {
 	margin:200px auto;
 }
 .hp-popup {
+	display:none;
 	width:450px;
 	min-height:250px;
 	padding:25px;
@@ -33,20 +34,28 @@ a:hover {
 <div class="popup-wrap">
 	<a href="javascript:" class="btn-popup">按扭</a>
 </div>
+
+<div class="hp-popup">1212</div>
 </body>
 </html>
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="jquery.popup.js"></script>
 <script>
 $('.btn-popup').bind('click', function() {
-	$.popup({
+
+	$('.hp-popup').popup();
+
+	/*$.popup({
 		// position: [0, 0],
-		// mask: false
+		// mask: false,
+		onOpenCallback: function() {
+			console.log('open');
+		},
 		onCloseCallback: function() {
-			console.log(12);
+			console.log('close');
 		}
 	}, function() {
 		console.log('callback');
-	});
+	});*/
 });
 </script>

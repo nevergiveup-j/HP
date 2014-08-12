@@ -43,19 +43,22 @@
     var $doc = $(document),
         $win = $(window);
 
-    function Popup( options, callback ) {
+    function Popup( $this, options, callback ) {
 
         if ( $.isFunction(options) ) {
             callback = options;
             options = null;
         };
 
+        this.$popup = $($this);
 
         this.options = $.extend(true, {}, defaults, options || {});
         this.callback = callback;
         this.ID_NUMBER = ($win.data('popup') || 0) + 1;
         this.ID_NAME = 'J_popup_mask_' + this.ID_NUMBER;
+        this.T_RESIZE = null;
 
+        this.triggerCall(this.options.onOpenCallback);
 
         this.init();
     };
@@ -84,18 +87,21 @@
                     'bottom': 0,
                     'left': 0,
                     'opacity': 0,
+                    'cursor': 'pointer',
                     'z-index': that.options.zIndex + that.ID_NUMBER
                 })
                 .appendTo(that.options.appendTo)
                 .fadeTo(that.options.speed, that.options.opacity);
             }
 
-            that.$popup = $('<div class="hp-popup">1212</div>')
+            that.$popup
                 .data('id', that.ID_NUMBER)
                 .css({
                     'position': that.options.positionStyle || 'absolute',
                     'z-index': that.options.zIndex + that.ID_NUMBER + 1
-                }).appendTo(that.options.appendTo);
+                }).each(function() {
+                    $(this).appendTo(that.options.appendTo);
+                });
 
             var calcPosition = that.calcPosition();
 
@@ -145,7 +151,11 @@
                     }
                 })
             }
-           
+            
+            $win.bind('resize.' + that.ID_NUMBER, function() {
+                that.reposition();
+            });
+
         },
         /**
          * 取消绑定
@@ -173,10 +183,9 @@
             that.unbind();
 
             that.$popup.stop().fadeTo(that.options.speed, 0, function() {
-                $(this).remove();
+                that.onCompleteCallback();
             });
 
-            that.onCompleteCallback();
 
             return false;
         },
@@ -184,23 +193,42 @@
          * 完成回调
          */
         onCompleteCallback: function( state ) {
-
             if ( state ) {
                 this.triggerCall(this.callback);
             } else {
                 this.triggerCall(this.options.onCloseCallback);
             }
         },
+        /**
+         * 重新定位
+         */
+        reposition: function() {
+            var that = this,
+                calcPosition;
+
+            that.T_RESIZE = setTimeout(function() {
+                calcPosition = that.calcPosition();
+
+                that.$popup
+                    .dequeue()
+                    .each(function() {
+                        $(this).css({
+                            left: calcPosition.fixedHPos, 
+                            top: calcPosition.fixedVPos
+                        });
+                    });
+            }, 50);
+        },
         triggerCall: function(func, arg) {
             $.isFunction(func) && func.call(this.$popup, arg);
         }
     }
 
-    $.extend({
-        popup: function( options, callback ) {
-            new Popup( options, callback );
-        }
-    });
+    $.fn.popup = function( options, callback ) {
+        return this.each(function() {
+            new Popup( this, options, callback );
+        })
+    };
     
     // ADM 
     return Popup;
