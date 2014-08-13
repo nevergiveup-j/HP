@@ -1,7 +1,7 @@
 /**
  * @Description: jQuery 弹出层 插件
  * @Author: wangjun
- * @Update: 2014-8-8 16:00
+ * @Update: 2014-8-13 16:00
  * @version: 1.0
  * @Github URL: https://github.com/nevergiveup-j/HP/tree/master/popup
  */
@@ -27,7 +27,7 @@
         // x, y
         position:          ['auto', 'auto'],
         // 定位办法
-        positionStyle:     'fixed',
+        positionManner:     'fixed',
         // 显示遮罩层
         mask:              true,
         // 遮罩层,click隐藏层
@@ -37,11 +37,12 @@
         speed:             250,
         zIndex:            999,
         onOpenCallback:    function() {},
-        onCloseCallback:   function() {}
-    }
+        onCloseCallback:   function() {}  
+    };
 
     var $doc = $(document),
-        $win = $(window);
+        $win = $(window),
+        isIE6 = $.browser.msie && $.browser.version=="6.0";
 
     function Popup( $this, options, callback ) {
 
@@ -50,7 +51,7 @@
             options = null;
         };
 
-        this.$popup = $($this);
+        this.$popup = $this;
 
         this.options = $.extend(true, {}, defaults, options || {});
         this.callback = callback;
@@ -75,17 +76,26 @@
 
         },
         render: function() {
-            var that = this;
+            var that = this,
+                bodyHeight = '100%';
+
+            // ie6
+            if ( isIE6 ) {
+                bodyHeight = Math.max(document.body.clientHeight, document.body.offsetHeight, document.documentElement.clientHeight);
+                that.options.positionManner = 'absolute';
+            }
 
             if ( that.options.mask ) {
                 $('<div class="hp-popup-mask '+ that.ID_NAME +'"></div>')
                 .css({
                     'background-color': that.options.maskColor,
-                    'position': 'fixed',
+                    'position': that.options.positionManner,
                     'top': 0,
                     'right': 0,
                     'bottom': 0,
                     'left': 0,
+                    'width': '100%',
+                    'height': bodyHeight,
                     'opacity': 0,
                     'cursor': 'pointer',
                     'z-index': that.options.zIndex + that.ID_NUMBER
@@ -97,16 +107,21 @@
             that.$popup
                 .data('id', that.ID_NUMBER)
                 .css({
-                    'position': that.options.positionStyle || 'absolute',
+                    'position': that.options.positionManner || 'absolute',
                     'z-index': that.options.zIndex + that.ID_NUMBER + 1
                 }).each(function() {
                     $(this).appendTo(that.options.appendTo);
                 });
 
-            var calcPosition = that.calcPosition();
+            var calcPosition = that.calcPosition(),
+                top = calcPosition.fixedVPos;
+
+            if ( isIE6 ) {
+                top += $win.scrollTop();
+            }
 
             that.$popup.css({
-                top: calcPosition.fixedVPos,
+                top: top,
                 left: calcPosition.fixedHPos
             });
 
@@ -184,10 +199,12 @@
 
             that.unbind();
 
-            that.$popup.stop().fadeTo(that.options.speed, 0, function() {
-                $(this).hide();
-                that.onCompleteCallback();
-            });
+            that.$popup
+                .data('id', null)
+                .stop().fadeTo(that.options.speed, 0, function() {
+                    $(this).hide();
+                    that.onCompleteCallback();
+                });
 
             return false;
         },
@@ -228,7 +245,12 @@
 
     $.fn.popup = function( options, callback ) {
         return this.each(function() {
-            new Popup( this, options, callback );
+
+            if ( $(this).data('id') ) {
+                return;
+            }
+
+            new Popup( $(this), options, callback );
         })
     };
     
