@@ -110,6 +110,8 @@
                 left: calcPosition.fixedHPos
             });
 
+            that.$popup.stop().fadeTo(that.options.speed, 1);
+
             that.onCompleteCallback(true);
         },
         calcPosition: function() {
@@ -183,9 +185,9 @@
             that.unbind();
 
             that.$popup.stop().fadeTo(that.options.speed, 0, function() {
+                $(this).hide();
                 that.onCompleteCallback();
             });
-
 
             return false;
         },
