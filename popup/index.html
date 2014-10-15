@@ -38,7 +38,12 @@ a:hover {
 	<a href="javascript:" class="btn-popup">按扭</a>
 </div>
 
-<div class="hp-popup">1212</div>
+<div class="hp-popup">
+	1212<br /><br /><br /><br />
+	<div style="text-align:center;">
+		<input type="button" value="关闭" class="btn-popup-close" />
+	</div>
+</div>
 
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 </body>
@@ -48,9 +53,8 @@ a:hover {
 <script>
 $('.btn-popup').bind('click', function() {
 
-// alert(12);
 	$('.hp-popup').popup();
-	/*$.popup({
+	/*$('.hp-popup').popup({
 		// position: [0, 0],
 		// mask: false,
 		onOpenCallback: function() {
@@ -62,5 +66,10 @@ $('.btn-popup').bind('click', function() {
 	}, function() {
 		console.log('callback');
 	});*/
+});
+
+// 自定义关闭弹出层
+$('.btn-popup-close').bind('click', function() {
+	$('.hp-popup').trigger('close');
 });
 </script>

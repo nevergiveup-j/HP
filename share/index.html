@@ -31,11 +31,14 @@ body, a {
 <script src="qrcode/qrcode.min.js"></script>
 <script src="jquery.share.js"></script>
 <script>
+var url = window.location;
+</script>
+<script>
 
 $('.J_share_list a').bind('click', function() {
 	var type = $(this).data('type');
 	$.shareAPI(type, {
-		url: 'http://voice.hupu.com/my',
+		url: url,
 		title: '1212',
 		pic: 'http://www.hupu.com/uploads/hupu/focus/large-20140723093316.jpg||http://www.hupu.com/uploads/hupu/gallery/20140715143250-1.jpg',
 		source: {

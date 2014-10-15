@@ -173,6 +173,11 @@
                 that.reposition();
             });
 
+            // 附加功能事件，关闭弹出层
+            this.$popup.off("close").on("close", function(event) {
+                that.close();
+            });
+
         },
         /**
          * 取消绑定
