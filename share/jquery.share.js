@@ -234,10 +234,10 @@
 				title: '打开微信“扫一扫”<br />打开网页后点击屏幕右上角分享按钮',
 				content: '<p style="width:162px;height:162px;margin:0 auto;text-align:center;padding:20px 0 45px;" id="J_qrcodeWeixin"></p>'
 			});
-
+			
 			// 生成weixin二维码
 			var qrcode = new QRCode("J_qrcodeWeixin", {
-			    text: url,
+			    text: opts.url,
 			    width: 162,
 			    height: 162
 			});
