@@ -5,7 +5,7 @@
  * @version: 1.0
  * @Github URL: https://github.com/nevergiveup-j/HP/tree/master/popup
  */
-
+ 
 ;(function (factory) {
     if (typeof define === "function" && define.amd) {
         // AMD模式
@@ -77,7 +77,8 @@
         },
         render: function() {
             var that = this,
-                bodyHeight = '100%';
+                bodyHeight = '100%',
+				zIndex = parseInt( that.options.zIndex );
 
             // ie6
             if ( isIE6 ) {
@@ -98,7 +99,7 @@
                     'height': bodyHeight,
                     'opacity': 0,
                     'cursor': 'pointer',
-                    'z-index': that.options.zIndex + that.ID_NUMBER
+                    'z-index': zIndex + that.ID_NUMBER
                 })
                 .appendTo(that.options.appendTo)
                 .fadeTo(that.options.speed, that.options.opacity);
@@ -108,7 +109,7 @@
                 .data('id', that.ID_NUMBER)
                 .css({
                     'position': that.options.positionManner || 'absolute',
-                    'z-index': that.options.zIndex + that.ID_NUMBER + 1
+                    'z-index': zIndex + that.ID_NUMBER + 1
                 }).each(function() {
                     $(this).appendTo(that.options.appendTo);
                 });
