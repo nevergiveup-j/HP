@@ -29,7 +29,7 @@ body, a {
 </html>
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="qrcode/qrcode.min.js"></script>
-<script src="jquery.share.min.js"></script>
+<script src="jquery.share.js"></script>
 <script>
 var url = window.location;
 </script>
@@ -38,11 +38,13 @@ var url = window.location;
 $('.J_share_list a').bind('click', function() {
 	var type = $(this).data('type');
 	$.shareAPI(type, {
-		url: url,
-		title: '1212',
-		pic: 'http://www.hupu.com/uploads/hupu/focus/large-20140723093316.jpg||http://www.hupu.com/uploads/hupu/gallery/20140715143250-1.jpg',
-		source: {
+		shareConfig: {
+			url: url,
+			title: '1212',
+			pic: 'http://www.hupu.com/uploads/hupu/focus/large-20140723093316.jpg||http://www.hupu.com/uploads/hupu/gallery/20140715143250-1.jpg',
+			source: {
 
+			}
 		},
 		buttons: {
 			'weibo': {
@@ -60,6 +62,8 @@ $('.J_share_list a').bind('click', function() {
 $('#shrae-newList').share({
 	theme: 'text',
 	shareConfig: {
+		url: 'http://www.hupu.com',
+		title: '1212',
 		searchPic: false
 	},
 	buttons: {
@@ -72,6 +76,6 @@ $('#shrae-newList').share({
 			url: 'https://twitter.com/share?url={url}&text={title}'
 		}
 	},
-	social: ['weibo','tqq', 'qzone', 'renren', 'weixin', 'qq']
+	social: ['weibo', 'tqq', 'qzone', 'renren', 'weixin', 'qq']
 });
 </script>

@@ -1,7 +1,7 @@
 /**
  * @Description: jQuery 分享到 插件
  * @Author: wangjun
- * @Update: 2014-07-18 16:00
+ * @Update: 2014-12-18 19:00
  * @version: 1.0
  * @Github URL: https://github.com/nevergiveup-j/HP/tree/master/share
  */
@@ -106,8 +106,8 @@
 			return;
 		};
 
-		// this.options = $.extend({}, defaults, options);
-		this.options = $.extend(true, {}, defaults, options || {});
+		this.options = $.extend(true,{}, defaults, options || {});
+		this.options.social = options.social || defaults.social;
 
 		this.init();
 	};
@@ -228,13 +228,12 @@
 												  .replace('{site}', sites).replace('{desc}', desc)
 												  .replace('{searchPic}', opts.searchPic);
 
-								  
 		if ( site === 'weixin' ) {
 			PopLayer.init({
 				title: '打开微信“扫一扫”<br />打开网页后点击屏幕右上角分享按钮',
 				content: '<p style="width:162px;height:162px;margin:0 auto;text-align:center;padding:20px 0 45px;" id="J_qrcodeWeixin"></p>'
 			});
-			
+
 			// 生成weixin二维码
 			var qrcode = new QRCode("J_qrcodeWeixin", {
 			    text: opts.url,
@@ -369,7 +368,7 @@
 		}
 	});
 
-	$.shareAPI.version =  '1.0';
+	$.shareAPI.version =  '1.0.1';
 
 	$.fn.share = function( options ) {
 
@@ -381,5 +380,8 @@
 	};
 
 	// ADM 
-	return ShareAPI;
+	return {
+		ShareAPI: ShareAPI,
+		share: ShareTo
+	};
 }));
