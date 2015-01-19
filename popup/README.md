@@ -46,4 +46,5 @@ options demo:<br />
     $('.hp-popup').trigger('close');
     
 // 刷新定位
-$('.hp-popup').trigger('refresh');
+
+    $('.hp-popup').trigger('refresh');
