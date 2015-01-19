@@ -38,3 +38,12 @@ onCloseCallback <code>Function</code> 可选，关闭弹层回调函数 <br />
 options demo:<br />
 
     $('.hp-popup').popup({});
+    
+### 附加功能事件
+-----------------------
+自定义关闭弹出层
+
+    $('.hp-popup').trigger('close');
+    
+// 刷新定位
+$('.hp-popup').trigger('refresh');
