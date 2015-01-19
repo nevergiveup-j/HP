@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Examples</title>
+<title>弹出层</title>
 <style>
 body {
 	background:#eee;
@@ -54,11 +54,9 @@ a:hover {
 $('.btn-popup').bind('click', function() {
 
 	$('.hp-popup').popup({
-		zIndex : '12'
-	});
-	/*$('.hp-popup').popup({
 		// position: [0, 0],
 		// mask: false,
+		// zIndex : '12',
 		onOpenCallback: function() {
 			console.log('open');
 		},
@@ -67,11 +65,12 @@ $('.btn-popup').bind('click', function() {
 		}
 	}, function() {
 		console.log('callback');
-	});*/
+	});
 });
 
 // 自定义关闭弹出层
 $('.btn-popup-close').bind('click', function() {
 	$('.hp-popup').trigger('close');
 });
+
 </script>
