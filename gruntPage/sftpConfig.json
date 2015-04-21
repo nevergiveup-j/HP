@@ -1,0 +1,13 @@
+{
+    "type":     "sftp",
+    "host":     "192.168.8.31",
+    "port":     "5339",
+    "username": "www",
+    "password": "hoopchina",
+    "src":      "dev/",
+    "dest":     "/home/www/b1/adidas/demo",
+    "exclusions": [
+        "\\.svn", "\\.hg", "\\.git",
+        "\\.bzr", "_darcs", "CVS", "\\.DS_Store"
+    ]
+}

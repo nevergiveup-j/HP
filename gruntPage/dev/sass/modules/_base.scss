@@ -1,0 +1,70 @@
+@charset "UTF-8";
+//-----------------------------------------------------        
+// base scss
+//-----------------------------------------------------
+
+@import "../vendor/sassCore/base";
+
+// 网站全局宽度
+$width-wrap:          980px !default;
+
+
+// 文字大小
+//-----------------------------------------------------
+$font-size-14:                14px !default;
+$font-size-16:                16px !default;
+$font-size-18:                18px !default;
+$font-size-20:                20px !default;
+$font-size-24:                24px !default;
+$font-size-30:                30px !default;
+
+
+// 图片地址
+//-----------------------------------------------------
+$body-bg:             "../images/body_bg_1.jpg";
+$header-ico-contact:  "../images/ico_contact.png";
+
+// 面包屑
+$crumb-arrow-right:   "../images/crumb_arrow_right.png";
+
+// loading
+$room-loading:        "../images/loading.gif";
+
+//首页房间
+$room-list-live:      "../images/room_live_state.png";
+$room-list-bottom-bg: "../images/room_bootom_bg.png";
+
+//直播房间
+$room-team-games:     "../images/room_game_ico.png";
+$room-color-active:   "../images/color_active.png";
+$room-ico-refresh:   "../images/ico_refresh.png";
+
+// 弹出设置房间
+$pop-button-close:    "../images/btn_close.png";
+
+// 透明背景颜色
+%transparent-bg-white {
+    @include bgcolor-alpha(rgba(0,0,0,.7));
+    border:1px solid rgba(255,255,255,.1);
+}
+
+%upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+    @include opacity(0);
+}
+
+@mixin screen-1200{
+    //   @media only screen and (min-width:1600px){
+    //     @content;
+    //   }
+    .html-w1200{
+        @content;
+    }
+}

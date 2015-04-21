@@ -1,0 +1,15 @@
+@charset "utf-8";
+/*
+* @Description: 首页
+* @Author: wangjun
+* @Update: 2014-10-03 13:00
+*/
+
+@import "modules/base";
+
+//标题
+@import "modules/title";
+//房间列表
+@import "partials/index/roomList";
+//房间收益
+@import "partials/index/roomEarnings";

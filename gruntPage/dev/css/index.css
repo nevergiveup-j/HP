@@ -1,0 +1,306 @@
+@charset "UTF-8";
+/*
+* @Description: 首页
+* @Author: wangjun
+* @Update: 2014-10-03 13:00
+*/
+/* line 26, ../sass/vendor/sassCore/core/_mixin.scss */
+.room-item .live-state .ico-live, .room-item .live-state .line, .room-earnings .button-btn .arrow-right {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 74, ../sass/vendor/sassCore/core/_mixin.scss */
+.room-title, .room-item .room-info .staff-info, .room-earnings .room-earnings-bd {
+  *zoom: 1;
+}
+/* line 64, ../sass/vendor/sassCore/core/_mixin.scss */
+.room-title:before, .room-item .room-info .staff-info:before, .room-earnings .room-earnings-bd:before, .room-title:after, .room-item .room-info .staff-info:after, .room-earnings .room-earnings-bd:after {
+  content: "";
+  display: table;
+}
+/* line 69, ../sass/vendor/sassCore/core/_mixin.scss */
+.room-title:after, .room-item .room-info .staff-info:after, .room-earnings .room-earnings-bd:after {
+  clear: both;
+}
+
+/* line 46, ../sass/modules/_base.scss */
+.room-item {
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 标题 */
+/* line 4, ../sass/modules/_title.scss */
+.room-title {
+  padding: 10px 0;
+}
+/* line 7, ../sass/modules/_title.scss */
+.room-title h2 {
+  height: 34px;
+  padding-left: 10px;
+  line-height: 34px;
+  border-left: 5px solid #a6171d;
+}
+
+/* 房间列表 */
+/* line 4, ../sass/partials/index/_roomList.scss */
+.room-item {
+  margin-bottom: 15px;
+}
+/* line 10, ../sass/partials/index/_roomList.scss */
+.room-item .room-bd {
+  position: relative;
+  padding: 10px 20px 10px;
+  min-height: 116px;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* line 17, ../sass/partials/index/_roomList.scss */
+.room-item .room-name {
+  font-size: 16px;
+  font-family: "Microsoft Yahei";
+}
+/* line 22, ../sass/partials/index/_roomList.scss */
+.room-item .room-info {
+  line-height: 24px;
+  font-size: 14px;
+}
+/* line 28, ../sass/partials/index/_roomList.scss */
+.room-item .room-info .staff-info-item {
+  display: block;
+}
+/* line 37, ../sass/partials/index/_roomList.scss */
+.room-item .room-info .games-info-time {
+  margin-right: 10px;
+}
+/* line 43, ../sass/partials/index/_roomList.scss */
+.room-item .live-state {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 120px;
+  height: 24px;
+  padding: 0 14px 0 4px;
+  line-height: 24px;
+  text-align: right;
+  font-weight: 700;
+  background: #7a7a7a;
+  color: #fff;
+}
+/* line 55, ../sass/partials/index/_roomList.scss */
+.room-item .live-state .ico-live {
+  float: left;
+  display: inline;
+  width: 45px;
+  height: 11px;
+  margin: 7px 5px 0 0;
+  overflow: hidden;
+  background: url("../images/room_live_state.png") no-repeat 0 0;
+}
+/* line 64, ../sass/partials/index/_roomList.scss */
+.room-item .live-state .line {
+  float: left;
+  display: inline;
+  width: 0;
+  height: 11px;
+  margin-top: 7px;
+  overflow: hidden;
+  border-left: 1px solid #9f9f9f;
+}
+/* line 74, ../sass/partials/index/_roomList.scss */
+.room-item .live-state span {
+  float: right;
+  display: inline;
+}
+/* line 78, ../sass/partials/index/_roomList.scss */
+.room-item .arrow-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 8px;
+  height: 12px;
+  overflow: hidden;
+  background: url("../images/room_live_state.png") no-repeat 0 -69px;
+}
+/* line 88, ../sass/partials/index/_roomList.scss */
+.room-item .field-gains {
+  padding: 5px 5px 5px 15px;
+  font-weight: 700;
+  background: #b3adad url("../images/room_bootom_bg.png") repeat 0 0;
+  color: #2c2d2f;
+}
+/* line 94, ../sass/partials/index/_roomList.scss */
+.room-item .field-gains .field-gains-list {
+  padding: 2px 0;
+  line-height: 20px;
+}
+/* line 97, ../sass/partials/index/_roomList.scss */
+.room-item .field-gains .field-gains-list .number {
+  color: #a6171d;
+}
+
+/*.index-list {
+    .fr {
+        @include float(right);
+    }
+}*/
+/* line 110, ../sass/partials/index/_roomList.scss */
+.room-list-liveIn .room-bd {
+  color: #fff;
+}
+/* line 113, ../sass/partials/index/_roomList.scss */
+.room-list-liveIn .live-state {
+  background: #a6171d;
+}
+/* line 115, ../sass/partials/index/_roomList.scss */
+.room-list-liveIn .live-state .ico-live {
+  width: 45px;
+  height: 21px;
+  margin-top: 2px;
+  background-position: 0 -20px;
+}
+/* line 121, ../sass/partials/index/_roomList.scss */
+.room-list-liveIn .live-state .line {
+  border-color: #bf585c;
+}
+/* line 125, ../sass/partials/index/_roomList.scss */
+.room-list-liveIn .arrow-right {
+  background-position: -19px -69px;
+}
+
+/* line 132, ../sass/partials/index/_roomList.scss */
+.room-list-rest .live-state {
+  background: #ffae00;
+}
+/* line 134, ../sass/partials/index/_roomList.scss */
+.room-list-rest .live-state .ico-live {
+  width: 45px;
+  height: 9px;
+  margin-top: 8px;
+  background-position: 5px -50px;
+}
+/* line 140, ../sass/partials/index/_roomList.scss */
+.room-list-rest .live-state .line {
+  border-color: #ffc547;
+}
+
+/* 房间收益 */
+/* line 4, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings {
+  position: relative;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+/* line 9, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-title {
+  margin-bottom: 1px;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/* line 12, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-title h2 {
+  border: none;
+}
+/* line 16, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-earnings-bd {
+  margin-bottom: 2px;
+  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+/* line 21, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-earnings-item {
+  float: left;
+  display: inline;
+  width: 50%;
+  height: 125px;
+  padding-top: 10px;
+  margin-left: -1px;
+  font-family: "Microsoft Yahei";
+  border-left: 1px solid #000;
+  color: #2c2d2f;
+}
+/* line 30, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-earnings-item:first-child {
+  border-left: none;
+  margin-left: 0;
+}
+/* line 34, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-earnings-item .earnings-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+/* line 38, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-earnings-item dd {
+  padding: 0 0 5px 25px;
+  text-align: left;
+}
+/* line 42, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .room-earnings-item .number {
+  font-size: 18px;
+  color: #a6171d;
+}
+/* line 47, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .button-btn {
+  height: 48px;
+  line-height: 48px;
+  font-family: "Microsoft Yahei";
+  background-color: #333;
+  background-color: rgba(141, 12, 18, 0.7);
+  color: #fff;
+}
+/* line 53, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .button-btn a {
+  color: #fff;
+}
+/* line 56, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .button-btn .arrow-right {
+  width: 8px;
+  height: 12px;
+  margin-left: 10px;
+  overflow: hidden;
+  background: url("../images/room_live_state.png") no-repeat -37px -69px;
+  vertical-align: middle;
+}
+/* line 67, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .border-line-left {
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 5px;
+  height: 100%;
+  background: #a6171d;
+}
+/* line 74, ../sass/partials/index/_roomEarnings.scss */
+.room-earnings .border-line-left .arrow-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-color: rgba(255, 255, 255, 0);
+  border-color: transparent\0;
+  *border-color: transparent;
+  _border-color: tomato;
+  _filter: chroma(color=tomato);
+  border-style: solid;
+  overflow: hidden;
+  *zoom: 1;
+  border-width: 7px 7px 7px 0;
+  border-right-color: #a6171d;
+  top: 50%;
+  left: -7px;
+  margin-top: -3px;
+}
+
+@media (max-width: 1000px) {
+  /* line 86, ../sass/partials/index/_roomEarnings.scss */
+  .room-earnings .border-line-left {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

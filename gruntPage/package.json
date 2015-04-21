@@ -1,0 +1,23 @@
+{
+  "name": "M",
+  "author": "wangjun",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-rev": "^0.1.0",
+    "grunt-usemin": "^3.0.0",
+    "grunt-ftp-deploy": "^0.1.10",
+    "grunt-sftp-deploy": "^0.2.4",
+    "matchdep": "*",
+    "time-grunt": "^1.1.1"
+  }
+}

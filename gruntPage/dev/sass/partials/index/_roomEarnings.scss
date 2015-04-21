@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 房间收益 */
+.room-earnings {
+    position: relative;
+    font-weight:700;
+    font-size:$font-size-14;
+    text-align:center;
+    .room-title {
+        margin-bottom:1px;
+        @include bgcolor-alpha(rgba(0,0,0,.7));
+        h2 {
+            border:none;
+        }
+    }
+    .room-earnings-bd {
+        margin-bottom:2px;
+        @include bgcolor-alpha(rgba(255,255,255,.7));
+        @extend %clearfix;
+    }
+    .room-earnings-item {
+        @include float;
+        width: 50%;
+        height: 125px;
+        padding-top:10px;
+        margin-left: -1px;
+        font-family: $fontYaHei;
+        border-left: 1px solid $black;
+        color:#2c2d2f;
+        &:first-child {
+            border-left: none;
+            margin-left: 0;
+        }
+        .earnings-title {
+            margin-bottom:10px;
+            font-size: $font-size-20;
+        }
+        dd {
+            padding:0 0 5px 25px;
+            text-align: left;
+        }
+        .number {
+            font-size:$font-size-18;
+            color:$red;
+        }
+    }
+    .button-btn {
+        height:48px;
+        line-height:48px;
+        font-family: $fontYaHei;
+        @include bgcolor-alpha(rgba(141,12,18,.7));
+        color:$white;
+        a {
+            color:$white;
+        }
+        .arrow-right {
+            @include inline-block;
+            width:8px;
+            height:12px;
+            margin-left:10px;
+            overflow:hidden;
+            background:url($room-list-live) no-repeat -37px -69px;
+            vertical-align:middle;
+        }
+    }
+//    装饰线
+    .border-line-left {
+        position: absolute;
+        top:0;
+        left:-7px;
+        width:5px;
+        height:100%;
+        background:#a6171d;
+        .arrow-left {
+            @include arrow(left, 7px, #a6171d);
+            top:50%;
+            left:-7px;
+            margin-top:-3px;
+        }
+
+    }
+}
+
+@media (max-width: 1000px) {
+    .room-earnings {
+        .border-line-left {
+            display: none;
+        }
+    }
+}
