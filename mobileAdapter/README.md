@@ -33,8 +33,7 @@ body {
 rem计算查看：[http://www.w3cplus.com/css3/define-font-size-with-css3-rem](http://www.w3cplus.com/css3/define-font-size-with-css3-rem)
 
 ### demo
-<iframe height='268' scrolling='no' src='//codepen.io/nevergiveup/embed/vOaMvB/?height=268&theme-id=17050&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/nevergiveup/pen/vOaMvB/'>rem</a> by nevergiveup (<a href='http://codepen.io/nevergiveup'>@nevergiveup</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
+[查看DEMO](//codepen.io/nevergiveup/embed/vOaMvB/?height=268&theme-id=17050&default-tab=result)
 
 
 ### rem兼容
