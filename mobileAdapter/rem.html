@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title></title>
 <style>
-    body, ul, li {
+    * {
         margin: 0;
         padding: 0;
     }
@@ -17,28 +17,27 @@
     }
     /* 默认font-size: 16px */
     html {
-        font-size: 12px;
+        font-size: 100px;
     }
-
     @media only screen and (min-width: 481px){
         html {
-            font-size: 18px;
+            font-size: 150px !important;
         }
     }
-    @media only screen and (min-width: 640px){
+    @media only screen and (min-width: 641px){
         html {
-            font-size: 24px;
+            font-size: 200px !important;
         }
     }
     body {
-        font-size: 1.4rem;
+        font-size: .24rem;
     }
     .ui-header,
     .ui-footer {
-        width: 100%;;
-        min-height: 8rem;
-        font-size: 3rem;
-        line-height: 8rem;
+        width: 3.2rem;
+        min-height: 1.6rem;
+        font-size: .3rem;
+        line-height: 1.6rem;
         margin: 0 auto;
         text-align: center;
         background: #eee;
@@ -48,12 +47,29 @@
     }
     .list li {
         float: left;
-        width: 10rem;
-        height: 8rem;
-        margin: 1.2rem;
+        width: 1.3rem;
+        height: .8rem;
+        margin: .1rem;
         background: #ccc;
     }
 </style>
+<script>
+(function(win, doc){
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+
+            docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+        };
+
+        // Abort if browser does not support addEventListener
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+})(window, document)
+</script>
 </head>
 <body>
 <header class="ui-header">
