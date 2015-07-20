@@ -21,8 +21,9 @@ html {
   font-size: 10px;
 }
 </code></pre>
-chrome文字最小支持12px，按照设计稿320尺寸，将<code><html></code>元素中设置font-size值为100px
+chrome文字最小支持12px，将<code><html></code>元素中设置font-size值为100px
 <pre><code>
+/* 320px布局 */
 html {
   font-size: 100px;
 }
@@ -32,9 +33,10 @@ body {
 </code></pre>
 rem计算查看：[http://www.w3cplus.com/css3/define-font-size-with-css3-rem](http://www.w3cplus.com/css3/define-font-size-with-css3-rem)
 
+
 ### demo
 [查看DEMO](//codepen.io/nevergiveup/embed/vOaMvB/?height=268&theme-id=17050&default-tab=result)
 
 
 ### rem兼容
-<img src="https://github.com/nevergiveup-j/HP/blob/master/mobileAdapter/rem.png" width="80%" />
+<img src="https://github.com/nevergiveup-j/HP/blob/master/mobileAdapter/rem.png" width="70%" />
