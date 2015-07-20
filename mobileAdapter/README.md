@@ -14,7 +14,7 @@
 rem 是指相对于根元素 <code>(html)</code> 的字体大小的单位。简单的说它就是一个相对单位。
 
 ### rem兼容
-![Alt text](/path/to/img.jpg)
+![rem](https://github.com/nevergiveup-j/HP/blob/master/mobileAdapter/rem.png)
 
 ### px与rem换算
 假如默认浏览器16px，16px=1rem<br />
