@@ -33,6 +33,24 @@ body {
 </code></pre>
 rem计算查看：[http://www.w3cplus.com/css3/define-font-size-with-css3-rem](http://www.w3cplus.com/css3/define-font-size-with-css3-rem)
 
+### 使用JS自适应
+<pre><code>
+(function(win, doc){
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+
+            docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+        };
+
+        // Abort if browser does not support addEventListener
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+})(window, document)
+</code></pre>
 
 ### demo
 [查看DEMO](//codepen.io/nevergiveup/embed/vOaMvB/?height=268&theme-id=17050&default-tab=result)
