@@ -5,7 +5,7 @@
   * 做H5页面适配一般使用百分比
   * 页面使用像素(px)实际尺寸都一样，会出现iphone 6页面太小
 
-## viewport 方式
+## viewport缩放
 
 
 ## rem布局
@@ -52,7 +52,7 @@ rem计算查看：[http://www.w3cplus.com/css3/define-font-size-with-css3-rem](h
 })(window, document)
 </code></pre>
 
-### demo
+### 示例
 [查看DEMO](//codepen.io/nevergiveup/embed/vOaMvB/?height=268&theme-id=17050&default-tab=result)
 
 
