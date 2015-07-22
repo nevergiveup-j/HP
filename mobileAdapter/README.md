@@ -6,7 +6,7 @@
   * 页面使用像素(px)实际尺寸都一样，会出现iphone 6页面太小
 
 ## viewport缩放
-
+视觉稿、页面宽度、viewport width<br /> 使用统一宽度，利用浏览器自身缩放完成适配。页面样式（包括图像元素）完全按照视觉稿的尺寸，使用定值单位（px、em）即可完成。
 
 ## rem布局
 
@@ -58,3 +58,6 @@ rem计算查看：[http://www.w3cplus.com/css3/define-font-size-with-css3-rem](h
 
 ### rem兼容
 <img src="https://github.com/nevergiveup-j/HP/blob/master/mobileAdapter/rem.png" width="70%" />
+
+
+参照：[web app变革之rem](http://isux.tencent.com/web-app-rem.html)
