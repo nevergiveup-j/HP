@@ -53,9 +53,8 @@ rem计算查看：[http://www.w3cplus.com/css3/define-font-size-with-css3-rem](h
 </code></pre>
 
 ### 示例
-[二维码](http://qrapi.cli.im/qr?data=http%253A%252F%252Fnevergiveup-j.github.io%252FmobileAdapter%252Frem&amp;level=H&amp;transparent=false&amp;bgcolor=%23ffffff&amp;forecolor=%23000000&amp;blockpixel=12&amp;marginblock=1&amp;logourl=&amp;size=280&amp;kid=cliim&amp;key=fd4b44f07396ae1a24806c990eeb1d0e)
+<img src="http://qrapi.cli.im/qr?data=http%253A%252F%252Fnevergiveup-j.github.io%252FmobileAdapter%252Frem&amp;level=H&amp;transparent=false&amp;bgcolor=%23ffffff&amp;forecolor=%23000000&amp;blockpixel=12&amp;marginblock=1&amp;logourl=&amp;size=280&amp;kid=cliim&amp;key=fd4b44f07396ae1a24806c990eeb1d0e" /><br />
 [查看DEMO](//codepen.io/nevergiveup/embed/vOaMvB/?height=268&theme-id=17050&default-tab=result)
-
 
 ### rem兼容
 <img src="https://github.com/nevergiveup-j/HP/blob/master/mobileAdapter/rem.png" width="70%" />
