@@ -57,7 +57,7 @@ rem计算查看：[http://www.w3cplus.com/css3/define-font-size-with-css3-rem](h
 [查看DEMO](http://nevergiveup-j.github.io/mobileAdapter/rem)
 
 ### rem兼容
-<img src="https://github.com/nevergiveup-j/HP/blob/master/mobileAdapter/rem.png" width="70%" />
+<img src="http://nevergiveup-j.github.io/mobileAdapter/rem.png" width="70%" />
 
 
 参照：[web app变革之rem](http://isux.tencent.com/web-app-rem.html)
