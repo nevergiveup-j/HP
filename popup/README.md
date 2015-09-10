@@ -1,5 +1,7 @@
 # jQuery-Popup 弹层 插件
 
+### 查看DEMO
+[popup](http://nevergiveup-j.github.io/hp/popup/)
 
 ### 先引入jQuery 框架
 -----------------------
