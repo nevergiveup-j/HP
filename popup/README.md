@@ -4,17 +4,14 @@
 [popup](http://nevergiveup-j.github.io/hp/popup/)
 
 ## 先引入jQuery 框架
------------------------
 
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
 ## 引用jQuery.share插件
------------------------
 
     <script src="jquery.popup.js"></script>
     
 ## 弹层 $.popup说明
------------------------
 
     $(elem).popup(options, callback);
     
@@ -42,7 +39,7 @@ options demo:<br />
     $('.hp-popup').popup({});
     
 ## 附加功能事件
------------------------
+
 自定义关闭弹出层
 
     $('.hp-popup').trigger('close');
