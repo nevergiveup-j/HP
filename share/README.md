@@ -2,14 +2,15 @@
 让分享插件开发更简单，分享到:新浪微博、腾讯微博、QQ空间、人人网、微信、QQ、豆瓣、twitter、facebook<br />
 两个插件Share API 
 
+## 查看DEMO
+[share](http://nevergiveup-j.github.io/hp/share/)
 
-### 先引入jQuery 框架
------------------------
+
+## 先引入jQuery 框架
 
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
-### 引用jQuery.share插件
------------------------
+## 引用jQuery.share插件
 
     <script src="jquery.share.js"></script>
 
@@ -18,13 +19,12 @@
     <link rel="stylesheet" href="jquery.share.css">
     <script src="qrcode/qrcode.min.js"></script>
     
-### 分享 $.shraeAPI说明
------------------------
+## 分享 $.shraeAPI说明
 
     $.shareAPI(site, options});
     
     
-#### site<code>string</code> 分享类型 *必写
+### site<code>string</code> 分享类型 *必写
 默认参数：<br />
 <code>weibo</code>新浪微博、<code>tqq</code>腾讯微博、<code>qzone</code>QQ空间、<code>renren</code>人人网、<code>qq</code>QQ分享、<code>weixin</code>微信、<code>douban</code>豆瓣、<code>twitter</code>twitter、<code>facebook</code>facebook<br />
 
@@ -43,7 +43,7 @@ demo：<br />
     
     $.shareAPI('weibo');
     
-#### options<code>object</code> 分享配置
+### options<code>object</code> 分享配置
 <code>title</code> 可选，分享标题（默认获取当前页面标题）<br />
 <code>url</code> 可选，分享链接（默认当前地址）<br />
 <code>pic</code> 可选，分享图片的路径, 使用多张图片以||隔开[a.jpg||b.jpg]<br />
@@ -156,8 +156,7 @@ demo：<br />
     }});
     
     
-### 分享 $.share();插件
------------------------
+## 分享 $.share();插件
 
     $('#shrae-newList').share({
     	channel: 'sports',
