@@ -1,30 +1,30 @@
 # jQuery-Popup 弹层 插件
 
-### 查看DEMO
+## 查看DEMO
 [popup](http://nevergiveup-j.github.io/hp/popup/)
 
-### 先引入jQuery 框架
+## 先引入jQuery 框架
 -----------------------
 
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
-### 引用jQuery.share插件
+## 引用jQuery.share插件
 -----------------------
 
     <script src="jquery.popup.js"></script>
     
-### 弹层 $.popup说明
+## 弹层 $.popup说明
 -----------------------
 
     $(elem).popup(options, callback);
     
-#### $(elem)<code>Object</code> 参数弹层内容
+### $(elem)<code>Object</code> 参数弹层内容
 
 简单demo:<br />
     
     $('.hp-popup').popup();
     
-#### options<code>Object</code> 弹层配置
+### options<code>Object</code> 弹层配置
 appendTo <code>String</code> 可选，加载位置（默认：body）<br />
 escClose <code>Boolean</code> 可选，按ESC关闭弹层 <br />
 position <code>Array</code> 可选，弹层定位位置（默认：居中）<br />
@@ -41,7 +41,7 @@ options demo:<br />
 
     $('.hp-popup').popup({});
     
-### 附加功能事件
+## 附加功能事件
 -----------------------
 自定义关闭弹出层
 
