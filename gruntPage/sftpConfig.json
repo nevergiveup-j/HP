@@ -1,11 +1,11 @@
 {
     "type":     "sftp",
-    "host":     "192.168.8.31",
-    "port":     "5339",
-    "username": "www",
-    "password": "hoopchina",
+    "host":     "121.189.666.0",
+    "port":     "80",
+    "username": "wangjun",
+    "password": "123456",
     "src":      "dev/",
-    "dest":     "/home/www/b1/adidas/demo",
+    "dest":     "/demo",
     "exclusions": [
         "\\.svn", "\\.hg", "\\.git",
         "\\.bzr", "_darcs", "CVS", "\\.DS_Store"
